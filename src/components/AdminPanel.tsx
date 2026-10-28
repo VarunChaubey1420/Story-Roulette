@@ -109,13 +109,14 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     setValidationError(null);
   };
 
+  const [showConfirmRestore, setShowConfirmRestore] = useState<boolean>(false);
+
   // Reset category or all words to default
   const handleRestoreDefaults = () => {
-    if (window.confirm('Restore default words for all four categories? Any custom words will be reset.')) {
-      onUpdateWords(DEFAULT_WORDS);
-      setValidationError(null);
-      sound.playTick(1.0);
-    }
+    onUpdateWords(DEFAULT_WORDS);
+    setValidationError(null);
+    setShowConfirmRestore(false);
+    sound.playTick(1.0);
   };
 
   // Update preferences helper
@@ -323,15 +324,33 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                 </div>
               </div>
 
-              {/* Restore Defaults Button */}
+              {/* Restore Defaults Button with In-UI Confirmation */}
               <div className="pt-2 flex justify-end">
-                <button
-                  onClick={handleRestoreDefaults}
-                  className="px-3 py-1.5 rounded-lg border border-[#795C37] text-xs text-[#C6A15B] hover:bg-[#2A161C] flex items-center gap-1.5 cursor-pointer"
-                >
-                  <RotateCcw className="w-3.5 h-3.5" />
-                  <span>Restore Default Word Collections</span>
-                </button>
+                {showConfirmRestore ? (
+                  <div className="flex items-center gap-2 p-2 rounded-lg bg-[#2A161C] border border-[#DFC38A]">
+                    <span className="text-xs text-[#DFC38A]">Reset all 4 categories to defaults?</span>
+                    <button
+                      onClick={handleRestoreDefaults}
+                      className="px-2.5 py-1 rounded bg-[#C6A15B] text-[#120B0E] font-bold text-xs hover:bg-[#DFC38A] cursor-pointer"
+                    >
+                      Yes, Reset
+                    </button>
+                    <button
+                      onClick={() => setShowConfirmRestore(false)}
+                      className="px-2.5 py-1 rounded bg-[#180E13] text-[#D5C7AA] text-xs hover:bg-[#201217] cursor-pointer"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => setShowConfirmRestore(true)}
+                    className="px-3 py-1.5 rounded-lg border border-[#795C37] text-xs text-[#C6A15B] hover:bg-[#2A161C] flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                    <span>Restore Default Word Collections</span>
+                  </button>
+                )}
               </div>
             </div>
           )}

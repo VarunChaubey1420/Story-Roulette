@@ -117,7 +117,7 @@ export const RouletteMachine: React.FC<RouletteMachineProps> = ({
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-[#C6A15B]/60" />
             <span className="text-[11px] font-cinzel tracking-wider text-[#DFC38A]">
-              MINERVA LITERARY GUILD
+              MINERVA LITERARY CLUB
             </span>
           </div>
         </div>
