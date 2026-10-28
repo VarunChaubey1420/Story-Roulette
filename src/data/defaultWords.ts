@@ -1,0 +1,165 @@
+import { CategoryConfig, WordCollections, UserPreferences } from '../types';
+
+export const CATEGORIES: CategoryConfig[] = [
+  {
+    key: 'character',
+    label: 'CHARACTER',
+    numeral: 'I',
+    iconName: 'User',
+    accentColor: '#C6A15B',
+  },
+  {
+    key: 'setting',
+    label: 'SETTING',
+    numeral: 'II',
+    iconName: 'Compass',
+    accentColor: '#C6A15B',
+  },
+  {
+    key: 'object',
+    label: 'OBJECT',
+    numeral: 'III',
+    iconName: 'Feather',
+    accentColor: '#C6A15B',
+  },
+  {
+    key: 'genre',
+    label: 'GENRE',
+    numeral: 'IV',
+    iconName: 'BookOpen',
+    accentColor: '#C6A15B',
+  },
+];
+
+export const DEFAULT_WORDS: WordCollections = {
+  character: [
+    'An immortal poet',
+    'A ghost who fears ghosts',
+    'A detective who cannot lie',
+    'A villain who saves lives',
+    'A writer who has forgotten every story',
+    'An abandoned android',
+    'A lonely king',
+    'An unreliable narrator',
+    'A time traveller with no destination',
+    'A librarian who hides forbidden books',
+    'A person who receives letters from their future self',
+    'A retired assassin',
+    'A child who remembers a previous life',
+    'A mysterious stranger',
+    'A thief who steals memories',
+    'A failed magician',
+    'An imaginary friend who became real',
+    'A scientist who fears discovery',
+    'A person who cannot recognize faces',
+    'The last storyteller on Earth',
+    'An antiquarian bound by an unspoken vow',
+    'A cartographer who maps dreams',
+    'An archivist who hears whispers from ink',
+    'A clockmaker whose heart ticks aloud'
+  ],
+  setting: [
+    'An abandoned library',
+    'A railway station at midnight',
+    'A city where nobody dreams',
+    'Room 404',
+    'A bookstore that appears only in the rain',
+    'A deserted college campus',
+    'A house with one locked room',
+    'A kingdom beneath the ocean',
+    'A village missing from every map',
+    'A train that never reaches its destination',
+    'A forgotten theatre',
+    'A world without sunlight',
+    'A hospital that treats impossible illnesses',
+    'A city frozen at 11:59 PM',
+    'A library at the end of time',
+    'A town where everybody knows your name',
+    'A hotel with an extra floor',
+    'An empty courtroom',
+    'A forest that remembers every visitor',
+    'A city where time moves backwards',
+    'An observatory above the clouds',
+    'A sunken cathedral ringing mute bells',
+    'An endless corridor behind a mirror',
+    'A Victorian greenhouse choked in black roses'
+  ],
+  object: [
+    'An unsigned letter',
+    'A broken watch',
+    'A key with no lock',
+    'A half-eaten samosa',
+    'A photograph with one missing person',
+    'A book with blank pages',
+    'A bloodstained diary',
+    'A recording of tomorrow',
+    'A mirror that reflects the past',
+    'A red umbrella',
+    'A sealed envelope',
+    'A ring that changes its inscription',
+    'A phone that receives calls from the dead',
+    'A ticket for a train that does not exist',
+    'A fountain pen that writes by itself',
+    'A map of an imaginary place',
+    'A flower that never wilts',
+    'A chess piece made of bone',
+    'A letter that must never be opened',
+    'A watch that counts down instead of up',
+    'A jar filled with trapped starlight',
+    'A rusted mechanical humming sparrow',
+    'A silver pocket flask that never empties',
+    'A sealed wax cylinder with a dying confession'
+  ],
+  genre: [
+    'Psychological thriller',
+    'Dark romance',
+    'Magical realism',
+    'Mystery',
+    'Gothic horror',
+    'Dark comedy',
+    'Fantasy',
+    'Crime thriller',
+    'Science fiction',
+    'Tragedy',
+    'Romantic drama',
+    'Historical fiction',
+    'Surreal fiction',
+    'Dystopian fiction',
+    'Mystery romance',
+    'Philosophical fiction',
+    'Supernatural suspense',
+    'Satire',
+    'Adventure',
+    'Literary fiction',
+    'Weird fiction',
+    'Cyberpunk noir',
+    'Mythic folklore',
+    'Cosmic mystery'
+  ]
+};
+
+export const DEFAULT_PREFERENCES: UserPreferences = {
+  durationPreset: 'cinematic',
+  soundEnabled: true,
+  soundVolume: 0.6,
+  particlesEnabled: true,
+  stopOrder: 'sequential',
+  branding: {
+    showMinerva: true,
+    clubName: 'MINERVA PRESENTS',
+    tagline: 'Fate chooses the elements. You write the story.',
+    secondaryQuote: 'Four elements. Infinite possibilities.'
+  },
+  recording: {
+    enableCountdown: true,
+    countdownSeconds: 3,
+    autoRevealAfterStop: true,
+    showSafeGuides: false
+  }
+};
+
+export const DURATION_MS: Record<UserPreferences['durationPreset'], number> = {
+  quick: 4000,
+  cinematic: 8000,
+  epic: 12000
+};

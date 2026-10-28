@@ -1,0 +1,6 @@
+{
+  "name": "Story Roulette - Minerva Literary Club",
+  "description": "An antique mechanical story prompt roulette machine crafted for Minerva Literary Club to generate creative writing elements for Instagram Reels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

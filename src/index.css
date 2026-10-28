@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-obsidian: #101010;
+    --color-burgundy: #431B25;
+    --color-burgundy-dark: #2A1117;
+    --color-gold: #C6A15B;
+    --color-gold-light: #DFC38A;
+    --color-gold-dark: #8E7036;
+    --color-parchment: #F1E6CF;
+    --color-parchment-dim: #D5C7AA;
+    --color-bronze: #795C37;
+  }
+
+  body {
+    background-color: #0c0a09;
+    color: #F1E6CF;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-cinzel-dec {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+}
+
+.font-garamond {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+/* Custom Antique Textures & Lighting */
+.bg-vignette {
+  background: radial-gradient(circle at 50% 35%, rgba(67, 27, 37, 0.35) 0%, rgba(16, 16, 16, 0.85) 60%, rgba(10, 8, 8, 0.98) 100%);
+}
+
+.bg-reel-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(16, 16, 16, 0.95) 0%,
+    rgba(40, 20, 25, 0.3) 25%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(40, 20, 25, 0.3) 75%,
+    rgba(16, 16, 16, 0.95) 100%
+  );
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF1D0 0%, #C6A15B 45%, #E5C78A 65%, #8E7036 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-gradient {
+  border-image: linear-gradient(to bottom right, #DFC38A, #795C37, #C6A15B, #431B25) 1;
+}
+
+.metallic-gold-bar {
+  background: linear-gradient(90deg, #795C37 0%, #C6A15B 25%, #FFF1D0 50%, #C6A15B 75%, #4D3A22 100%);
+}
+
+.metallic-gold-frame {
+  box-shadow: 
+    0 0 0 1px rgba(198, 161, 91, 0.35),
+    0 4px 20px -2px rgba(0, 0, 0, 0.8),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.6);
+}
+
+.antique-glow {
+  filter: drop-shadow(0 0 12px rgba(198, 161, 91, 0.3));
+}
+
+.antique-glow-intense {
+  filter: drop-shadow(0 0 24px rgba(198, 161, 91, 0.55));
+}
+
+/* Mechanical rivets */
+.rivet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #DFC38A 0%, #8E7036 60%, #3d2a13 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), inset 0 0.5px 0.5px rgba(255, 255, 255, 0.4);
+}
+
+/* Custom Scrollbars for word editor & modals */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #151210;
+}
+::-webkit-scrollbar-thumb {
+  background: #4a3821;
+  border-radius: 3px;
+  border: 1px solid #795C37;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A15B;
+}
+
+/* Pulse keyframes for stopping */
+@keyframes mechanical-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(198, 161, 91, 0.7); }
+  50% { transform: scale(1.02); box-shadow: 0 0 18px 4px rgba(198, 161, 91, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(198, 161, 91, 0); }
+}
+
+.pulse-stop {
+  animation: mechanical-pulse 0.45s ease-out;
+}
